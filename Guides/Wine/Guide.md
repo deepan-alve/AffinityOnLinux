@@ -188,7 +188,7 @@ If the main window looks correct but the Welcome (Home) window is white, with on
 cp dxvk-*/x64/d3d9.dll "$HOME/.affinity/drive_c/Program Files/Affinity/Affinity/"
 WINEPREFIX="$HOME/.affinity" WINEDLLOVERRIDES="d3d9=n,b" wine "$HOME/.affinity/drive_c/Program Files/Affinity/Affinity/Affinity.exe"
 ```
-With DXVK providing d3d9, do not set `d3d9.shaderModel = 1` in `DXVK_CONFIG`, as that makes the UI sluggish.
+With DXVK providing d3d9, leave `DXVK_CONFIG` unset: `d3d9.deferSurfaceCreation = True` makes new windows render white again, and `d3d9.shaderModel = 1` makes the UI sluggish.
 
 ### Use one Wine build per prefix
 
